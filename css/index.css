@@ -1,0 +1,58 @@
+body{
+    background:url(../imagenes/fondoInicioSesion.jpg);
+    background-size: 1000px 900px;
+    }
+#formulario{
+    
+  text-align: center;
+
+  padding: 10px;
+}
+
+h1{
+    text-align: center;
+    margin-top: 200px;
+    font-size: 50px ;
+    color: white;
+}
+input{
+    
+    display: block;
+    margin: auto;
+    margin-top: 10px;
+    margin-bottom: 10px;
+
+}
+
+label{
+color: white;
+
+}
+#emailIngreso{
+    height: 25px;
+    width: 200px;
+
+}
+
+#password{
+    height: 25px;
+    width: 200px;
+
+
+}
+div{
+
+    text-align: center;
+    margin-top: 10px;
+}
+a{
+
+    color: white;
+}
+    
+
+
+
+
+
+
