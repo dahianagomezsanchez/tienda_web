@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Adminstrador de ventas</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+    </head>
+
+    <body style="background-color: rgb(226, 233, 240);">
+        <center>
+            <br>
+            <br>
+            <h1>Registro de Ventas</h1>
+        </center>  
+
+        <br>
+        <br>
+        
+        <div style="margin-left: 5%;" >
+            <label style="margin-right: 2%;" for="Vendedor">Vendedor:</label>
+            <input id="Vendedor" style="width: 20%;" type="text" placeholder="Nombre">
+
+            <br>
+            <br>
+
+            <div>
+
+                <label for="start">Fecha de Venta:</label>
+                <br>
+                <input type="date" id="start" name="date-start"
+                value="2021-09-21"
+                min="2018-01-01" max="2035-12-31">
+
+                <br>
+                <br>
+
+                <label for="finish">Fecha de Pago:</label>
+                <br>
+                <input type="date" id="finish" name="date-finish"
+                value="2021-09-21"
+                min="2018-01-01" max="2035-12-31">
+    
+            </div>
+        </div>
+
+        <br>
+        <br>
+        <br>
+
+
+        <div style="margin-left: 14%;">
+
+            <div class="dropdown">
+                <button class="btn btn-light dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                  Seleccione un producto
+                </button>
+                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                  <li><button id="pc" class="dropdown-item" type="button">Un Computador una chimba</button></li>
+                  <li><button id="imp"  class="dropdown-item" type="button">Una impresora que imprime</button></li>
+                  <li><button id="mau" class="dropdown-item" type="button">Un raton que se deja tocar</button></li>
+                  <li><button id="au" class="dropdown-item" type="button">Auriculares que no se dañan</button></li>
+                  <li><button id="man" class="dropdown-item" type="button">Un mando pa la pereza</button></li>
+                  
+                </ul>
+            </div>
+
+              <br>
+              <br>
+
+              <div class="container">
+                <div class="row">
+                  <div class="col">
+                    <h3>Equipo</h3>
+                        <li id="idEquipo" class="lh-1" style="list-style-type: none;">Seleccione un producto referente a la venta realizada </li>
+                  </div>
+                  <div class="col">
+                    <h3>Disponible</h3>
+                        <li id="disponible" style="list-style-type: none;"> &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp 0</li>
+                  </div>
+                  <div class="col">
+                    <h3>Valor Unitario</h3>
+                        <li id="valor" style="list-style-type: none; "> &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp 0 $</li>
+                  </div>
+    
+                  <div class="col">
+    
+                    <h3>Cantidad</h3>
+                    <li style="list-style-type: none; font-size: 80%;"><input  type="text" id="texto" disabled></li>
+    
+                  </div>
+                </div>
+              </div>
+
+              
+
+              <br>
+              <br>
+
+              <div style="margin-left: 34%;">
+                <button id="boton_pedido" type="button" class="btn btn-primary" disabled>Añadir al Pedido</button>
+              </div>
+
+
+        </div>
+
+        <br>
+        <br>
+
+
+        <div style="margin-left: 14%;">
+            <h4>Total Venta</h2>
+            <label for="id-venta"> ID Venta:  </label>
+            <label id="id-venta">10010001</label>
+
+            <br>
+            <br>
+
+            <div style="columns: 3;">
+
+                <div >
+                    <p >
+                        <b>Cantidad</b>
+                        <br>
+                        &nbsp &nbsp &nbsp 5
+                        <br>
+                        &nbsp &nbsp &nbsp 4
+                        <br>
+                        &nbsp &nbsp &nbsp 3
+                        <br>
+                        &nbsp &nbsp &nbsp 2
+                        <br>
+                        &nbsp &nbsp &nbsp 1
+                    </p>
+                
+                </div>
+
+                <div style="margin-left: -70%;">
+                    <p>
+                        <b>Articulos</b>
+                        <br>
+                        Computadores una chimba
+                        <br>
+                        Impresoras que imprimen
+                        <br>
+                        Ratones que se dejan tocar
+                        <br>
+                        Auriculares que no se dañan
+                        <br>
+                        Mando pa la pereza
+                    </p>
+    
+                </div>
+    
+                <div style="margin-left: -85%;">
+                    <p>
+                        <b>Precio Total</b>
+                        <br>
+                        5000 $
+                        <br>
+                        800 $
+                        <br>
+                        300 $
+                        <br>
+                        600 $
+                        <br>
+                        150 $
+                    </p>
+    
+                </div>
+
+            </div>
+
+            <div style="margin-left: 40%;">
+                <label for="costo"><b>Costo Total : &nbsp</b></label>
+                <label id="costo">6850 $</label>
+            </div>
+
+            <br>
+
+            <div style="margin-left: 34%;">
+                <button type="button" class="btn btn-success">Guardar Venta</button>
+            </div>
+
+
+
+
+
+
+        </div>
+
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>
+
+        <script>
+
+            let mipc=document.getElementById("pc")
+            let mi_impresora=document.getElementById("imp")
+            let mi_raton=document.getElementById("mau")
+            let mi_auricular=document.getElementById("au")
+            let mi_mando=document.getElementById("man")
+
+            let mi_lista_equipo=document.getElementById("idEquipo")
+            let mi_disponible=document.getElementById("disponible")
+            let mi_valor=document.getElementById("valor")
+            let mi_texto=document.getElementById("texto")
+            let mi_boton_pedido=document.getElementById("boton_pedido")
+            let contador=0
+            let contador2=0
+            let contador3=0
+            let contador4=0
+            let contador5=0
+            let var_disponible=50
+            let var_disponible2=30
+            let var_disponible3=75
+            let var_disponible4=62
+            let var_disponible5=46
+            let var_unitario=1000
+            let var_unitario2=200
+            let var_unitario3=100
+            let var_unitario4=300
+            let var_unitario5=150
+
+            function cambio_pc()
+            {
+                if (contador==0)
+                {
+                    mi_lista_equipo.innerHTML="Un Computador una chimba"
+
+                    mi_disponible.innerHTML="&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp "+var_disponible
+
+                    mi_valor.innerHTML="&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp "+var_unitario+" $"
+
+                    mi_boton_pedido.removeAttribute("disabled",false)
+
+                    mi_texto.removeAttribute("disabled",false)
+
+
+                    contador=1
+                }
+
+                 else
+                 {
+                    mi_lista_equipo.innerHTML="Seleccione un producto referente a la venta realizada"
+
+                    mi_disponible.innerHTML="&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp 0"
+
+                    mi_valor.innerHTML="&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp    0 $"
+
+                    mi_boton_pedido.setAttribute("disabled",true)
+
+                     mi_texto.setAttribute("disabled",true)
+
+                    contador=0
+
+                 }
+            }
+
+
+            function cambio_impresora()
+            {
+                if (contador2==0)
+                {
+                    mi_lista_equipo.innerHTML="Una impresora que imprime"
+
+                    mi_disponible.innerHTML="&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp "+var_disponible2
+
+                    mi_valor.innerHTML="&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp "+var_unitario2+" $"
+
+                    mi_boton_pedido.removeAttribute("disabled",false)
+
+                    mi_texto.removeAttribute("disabled",false)
+
+
+                    contador2=1
+                }
+
+                 else
+                 {
+                    mi_lista_equipo.innerHTML="Seleccione un producto referente a la venta realizada"
+
+                    mi_disponible.innerHTML="&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp 0"
+
+                    mi_valor.innerHTML="&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp    0 $"
+
+                    mi_boton_pedido.setAttribute("disabled",true)
+
+                     mi_texto.setAttribute("disabled",true)
+
+                    contador2=0
+
+                 }
+            }
+
+
+            function cambio_raton()
+            {
+                if (contador3==0)
+                {
+                    mi_lista_equipo.innerHTML="Un raton que se deja tocar"
+
+                    mi_disponible.innerHTML="&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp "+var_disponible3
+
+                    mi_valor.innerHTML="&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp "+var_unitario3+" $"
+
+                    mi_boton_pedido.removeAttribute("disabled",false)
+
+                    mi_texto.removeAttribute("disabled",false)
+
+
+                    contador3=1
+                }
+
+                 else
+                 {
+                    mi_lista_equipo.innerHTML="Seleccione un producto referente a la venta realizada"
+
+                    mi_disponible.innerHTML="&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp 0"
+
+                    mi_valor.innerHTML="&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp    0 $"
+
+                    mi_boton_pedido.setAttribute("disabled",true)
+
+                     mi_texto.setAttribute("disabled",true)
+
+                    contador3=0
+
+                 }
+            }
+
+
+            function cambio_auricular()
+            {
+                if (contador4==0)
+                {
+                    mi_lista_equipo.innerHTML="Auriculares que no se dañan"
+
+                    mi_disponible.innerHTML="&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp "+var_disponible4
+
+                    mi_valor.innerHTML="&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp "+var_unitario4+" $"
+
+                    mi_boton_pedido.removeAttribute("disabled",false)
+
+                    mi_texto.removeAttribute("disabled",false)
+
+
+                    contador4=1
+                }
+
+                 else
+                 {
+                    mi_lista_equipo.innerHTML="Seleccione un producto referente a la venta realizada"
+
+                    mi_disponible.innerHTML="&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp 0"
+
+                    mi_valor.innerHTML="&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp    0 $"
+
+                    mi_boton_pedido.setAttribute("disabled",true)
+
+                     mi_texto.setAttribute("disabled",true)
+
+                    contador4=0
+
+                 }
+            }
+
+
+            
+            function cambio_mando()
+            {
+                if (contador5==0)
+                {
+                    mi_lista_equipo.innerHTML="Un mando pa la pereza"
+
+                    mi_disponible.innerHTML="&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp "+var_disponible5
+
+                    mi_valor.innerHTML="&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp "+var_unitario5+" $"
+
+                    mi_boton_pedido.removeAttribute("disabled",false)
+
+                    mi_texto.removeAttribute("disabled",false)
+
+                    contador5=1
+                }
+
+                 else
+                 {
+                    mi_lista_equipo.innerHTML="Seleccione un producto referente a la venta realizada"
+
+                    mi_disponible.innerHTML="&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp 0"
+
+                    mi_valor.innerHTML="&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp    0 $"
+
+                    mi_boton_pedido.setAttribute("disabled",true)
+
+                     mi_texto.setAttribute("disabled",true)
+
+                    contador5=0
+
+                 }
+            }
+
+            mipc.addEventListener("click",cambio_pc,true)
+            mi_impresora.addEventListener("click",cambio_impresora,true)
+            mi_raton.addEventListener("click",cambio_raton,true)
+            mi_auricular.addEventListener("click",cambio_auricular,true)
+            mi_mando.addEventListener("click",cambio_mando,true)
+
+        </script>
+    </body>
+</html>
