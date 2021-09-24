@@ -36,7 +36,7 @@ function validacion(formulario){
 
 
     }
-    if (formulario.contrasena.value != contraconfirm){ 
+    if (formulario.contrasena.value != formulario.contraconfirm.value){ 
         document.getElementById("ErrorConfirmarContrasena").innerText="Las contraseñas no coinciden";
     
         formulario.contraconfirm.focus();
@@ -45,8 +45,8 @@ function validacion(formulario){
 
 
 
-        else {return true;}
-        alert("Su registro se ha realizado satisfactoriamente")
-
+    else { return true; }
     
 }
+
+document.formulario.submit();
