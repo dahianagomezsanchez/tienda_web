@@ -15,93 +15,155 @@
 
         <br>
         <br>
-        
-        <div style="margin-left: 5%;" >
-            <label style="margin-right: 2%;" for="Vendedor">Vendedor:</label>
-            <input id="Vendedor" style="width: 20%;" type="text" placeholder="Nombre">
 
-            <br>
-            <br>
+        <div class="container">
+            <div class="row">
+              <div class="col-3">
+                  <div class="container">
+                      <div class="row">
+                          <div class="col-4">
+                            <label  for="Vendedor">Vendedor:</label>
+                          </div>
+                          <div class="col-8">
+                            <div class="dropdown">
+                                <button style="width: 100%;" class="btn btn-secondary btn-sm dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                                  Nombre
+                                </button>
+                                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                                  <li><button class="dropdown-item" href="#">Vendedor 1</button></li>
+                                  <li><button class="dropdown-item" href="#">Vendedor 2</button></li>
+                                  <li><button class="dropdown-item" href="#">Vendedor 3</button></li>
+                                  <li><button class="dropdown-item" href="#">Vendedor 4</button></li>
+                                  <li><button class="dropdown-item" href="#">Vendedor 5</button></li>
+                                </ul>
+                            </div>
+                          </div>
+                      </div>
 
-            <div>
+                      <br>
+                      <br>
 
-                <label for="start">Fecha de Venta:</label>
-                <br>
-                <input type="date" id="start" name="date-start"
-                value="2021-09-21"
-                min="2018-01-01" max="2035-12-31">
+                      <div class="row">
 
-                <br>
-                <br>
+                          <div class="col-6">
+                            <label for="start">ID Vendedor:</label>
+                          </div>
 
-                <label for="finish">Fecha de Pago:</label>
-                <br>
-                <input type="date" id="finish" name="date-finish"
-                value="2021-09-21"
-                min="2018-01-01" max="2035-12-31">
-    
-            </div>
-        </div>
+                          <div class="col-6">
+                            <label style="width: min-content;" for="start">100790900215</label>
+                          </div>
 
-        <br>
-        <br>
-        <br>
+                      </div>
+
+                      <br>
+                      <br>
+
+                        <div class="row">
+                          <label for="start">Nombre Cliente:</label>
+                        </div>
+                        <div class="row">
+                          <input style="width: 90%;margin-left: 5%;" type="text">
+                        </div>
+
+                      <br>
+
+                      <div class="row">
+                        <div class="col-5">
+                          <label for="start">ID Cliente:</label>
+                        </div>
+                        <div class="col-7">
+                          <input style="width: 100%;" type="text">
+                        </div>
+                    </div>
+
+                    <br>
+                    <br>
+
+                    <div class="row">
+
+                        <div class="col-12">
+
+                            <label for="start">Fecha de Venta:</label>
+                            <br>
+                            <input style="width: 80%;" type="date" id="start" name="date-start"
+                            value="2021-09-21"
+                            min="2021-01-01" max="2035-12-31">
+
+                          </div>
+
+                    </div>
 
 
-        <div style="margin-left: 14%;">
 
-            <div class="dropdown">
-                <button class="btn btn-light dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-                  Seleccione un producto
-                </button>
-                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                  <li><button id="pc" class="dropdown-item" type="button">Un Computador una chimba</button></li>
-                  <li><button id="imp"  class="dropdown-item" type="button">Una impresora que imprime</button></li>
-                  <li><button id="mau" class="dropdown-item" type="button">Un raton que se deja tocar</button></li>
-                  <li><button id="au" class="dropdown-item" type="button">Auriculares que no se dañan</button></li>
-                  <li><button id="man" class="dropdown-item" type="button">Un mando pa la pereza</button></li>
+                  </div>
                   
-                </ul>
-            </div>
 
-              <br>
-              <br>
 
-              <div class="container">
-                <div class="row">
-                  <div class="col">
-                    <h3>Equipo</h3>
-                        <li id="idEquipo" class="lh-1" style="list-style-type: none;">Seleccione un producto referente a la venta realizada </li>
-                  </div>
-                  <div class="col">
-                    <h3>Disponible</h3>
-                        <li id="disponible" style="list-style-type: none;"> &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp 0</li>
-                  </div>
-                  <div class="col">
-                    <h3>Valor Unitario</h3>
-                        <li id="valor" style="list-style-type: none; "> &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp 0 $</li>
-                  </div>
-    
-                  <div class="col">
-    
-                    <h3>Cantidad</h3>
-                    <li style="list-style-type: none; font-size: 80%;"><input  type="text" id="texto" disabled></li>
-    
-                  </div>
+              </div>
+
+              <div class="col-9">
+                <div style="margin-left: 14%;">
+
+                    <div class="dropdown">
+                        <button class="btn btn-light btn-sm dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                          Seleccione un producto
+                        </button>
+                        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                          <li><button id="pc" class="dropdown-item" type="button">Un Computador una chimba</button></li>
+                          <li><button id="imp"  class="dropdown-item" type="button">Una impresora que imprime</button></li>
+                          <li><button id="mau" class="dropdown-item" type="button">Un raton que se deja tocar</button></li>
+                          <li><button id="au" class="dropdown-item" type="button">Auriculares que no se dañan</button></li>
+                          <li><button id="man" class="dropdown-item" type="button">Un mando pa la pereza</button></li>
+                          
+                        </ul>
+                    </div>
+        
+                      <br>
+                      <br>
+        
+                      <div class="container">
+                        <div class="row">
+                          <div class="col">
+                            <h4>Equipo</h4>
+                                <li id="idEquipo" class="lh-1" style="list-style-type: none;">Seleccione un producto referente a la venta realizada </li>
+                          </div>
+                          <div class="col">
+                            <h4>Disponible</h4>
+                                <li id="disponible" style="list-style-type: none;"> &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp 0</li>
+                          </div>
+                          <div class="col">
+                            <h4>Valor Unitario</h4>
+                                <li id="valor" style="list-style-type: none; "> &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp 0 $</li>
+                          </div>
+            
+                          <div class="col">
+            
+                            <h4>Cantidad</h4>
+                            <li style="list-style-type: none; font-size: 80%;"><input  type="text" id="texto" disabled></li>
+            
+                          </div>
+                        </div>
+                      </div>
+        
+                      
+        
+                      <br>
+                      <br>
+        
+                      <div style="margin-left: 34%;">
+                        <button id="boton_pedido" type="button" class="btn btn-primary" disabled>Añadir al Pedido</button>
+                      </div>
+        
+        
                 </div>
               </div>
-
-              
-
-              <br>
-              <br>
-
-              <div style="margin-left: 34%;">
-                <button id="boton_pedido" type="button" class="btn btn-primary" disabled>Añadir al Pedido</button>
-              </div>
-
-
+            </div>
         </div>
+
+
+        <br>
+        <br>
+        <br>
 
         <br>
         <br>
@@ -235,6 +297,10 @@
 
 
                     contador=1
+                    contador2=0
+                    contador3=0
+                    contador4=0
+                    contador5=0
                 }
 
                  else
@@ -271,6 +337,10 @@
 
 
                     contador2=1
+                    contador=0
+                    contador3=0
+                    contador4=0
+                    contador5=0
                 }
 
                  else
@@ -307,6 +377,10 @@
 
 
                     contador3=1
+                    contador=0
+                    contador2=0
+                    contador4=0
+                    contador5=0
                 }
 
                  else
@@ -343,6 +417,10 @@
 
 
                     contador4=1
+                    contador=0
+                    contador2=0
+                    contador3=0
+                    contador5=0
                 }
 
                  else
@@ -379,6 +457,10 @@
                     mi_texto.removeAttribute("disabled",false)
 
                     contador5=1
+                    contador=0
+                    contador2=0
+                    contador3=0
+                    contador4=0
                 }
 
                  else
