@@ -1,0 +1,27 @@
+
+/* Usando la clase form le asignamos al formulario un ancho de 100% 'width: 100%;' , para que abarque todo el ancho correspodiente a su div contenedor. Esto es sobre todo para que ocupe todo el espacio en pantallas pequeñas.
+
+Al form le asignamos un ancho máximo de 600px 'max-width: 600px', hacemos esto para que en pantallas más grandes el formulario no se estire demasiado y matenga sus elementos no ocupen todo el espacio disponible
+
+La regla 'margin: 0 auto;' centra horizontalmente el contenido con respecto a su contenedor. en pantallas grandes el formulario lucira en el centro del elemento y en pantallas pequeñas ocupara todo el espacio.
+
+Usando flexbox alineamos los elementos tanto los input como el botón uno abajo del otro y centrandolos dentro del formulario para poner los elementos uno abajo del otro y centrar los inputs dentro del form. */
+
+
+
+.form {
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.form button {
+  padding: 0.5em 1em;
+  border: none;
+  background: rgb(100, 200, 255);
+  cursor: pointer;
+}
