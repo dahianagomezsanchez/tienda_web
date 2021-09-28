@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Adminstrador de ventas</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+    </head>
+
+    <body style="background-color: rgb(226, 233, 240);">
+        <center>
+            <br>
+            <br>
+            <h1>Registro de Ventas</h1>
+        </center>  
+
+        <br>
+        <br>
+
+        <div class="container">
+            <div class="row">
+              <div class="col-3">
+                  <div class="container">
+                      <div class="row">
+                          <div class="col-4">
+                            <label  for="Vendedor">Vendedor:</label>
+                          </div>
+                          <div class="col-8">
+                            <div class="dropdown">
+                                <button style="width: 100%;" class="btn btn-secondary btn-sm dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                                  Nombre
+                                </button>
+                                <ul id="drop_vendedores" class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                                </ul>
+                            </div>
+                          </div>
+                      </div>
+
+                      <br>
+                      <br>
+
+                      <div class="row">
+
+                          <div class="col-6">
+                            <label for="start">ID Vendedor:</label>
+                          </div>
+
+                          <div class="col-6">
+                            <label id="id_vendedor" style="width: min-content;" for="start"></label>
+                          </div>
+
+                      </div>
+
+                      <br>
+                      <br>
+
+                        <div class="row">
+                          <label for="start">Nombre Cliente:</label>
+                        </div>
+                        <div class="row">
+                          <input style="width: 90%;margin-left: 5%;" type="text" id="nombre_cliente">
+                        </div>
+
+                      <br>
+
+                      <div class="row">
+                        <div class="col-5">
+                          <label for="start">ID Cliente:</label>
+                        </div>
+                        <div class="col-7">
+                          <input style="width: 100%;" type="text" id="id_cliente">
+                        </div>
+                    </div>
+
+                    <br>
+                    <br>
+
+                    <div class="row">
+
+                        <div class="col-12">
+
+                            <label for="start">Fecha de Venta:</label>
+                            <br>
+                            <input style="width: 80%;" type="date" id="start" name="date-start"
+                            value="2021-09-21"
+                            min="2021-01-01" max="2035-12-31">
+
+                          </div>
+
+                    </div>
+
+
+
+                  </div>
+                  
+
+
+              </div>
+
+              <div class="col-9">
+                <div>
+
+                    <div style="margin-left: 2%;" class="dropdown">
+                        <button class="btn btn-light btn-sm dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                          Seleccione un producto
+                        </button>
+                        <ul id="lista_productos" class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                          
+                        </ul>
+                    </div>
+        
+                      <br>
+                      <br>
+        
+                      <div class="container">
+                        <div class="row">
+                          <div class="col">
+                            <h4>Equipo</h4>
+                                <li id="idEquipo" class="lh-1" style="list-style-type: none;">Seleccione un producto referente a la venta realizada </li>
+                          </div>
+                          <div class="col">
+                            <h4>Disponible</h4>
+                                <li id="disponible" style="list-style-type: none;"> &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp 0</li>
+                          </div>
+                          <div class="col">
+                            <h4>Valor Unitario($)</h4>
+                                <li id="valor" style="list-style-type: none; "> &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp 0 $</li>
+                          </div>
+            
+                          <div class="col">
+            
+                            <h4>Cantidad</h4>
+                            <li style="list-style-type: none; font-size: 80%;"><input  type="number" pattern="\d+" id="texto" disabled></li>
+            
+                          </div>
+                        </div>
+                      </div>
+        
+                      
+        
+                      <br>
+                      <br>
+        
+                      <div style="margin-left: 34%;">
+                        <button id="boton_pedido" type="button" onclick="agregar_al_pedido();" class="btn btn-primary" disabled>Añadir al Pedido</button>
+                      </div>
+        
+        
+                </div>
+              </div>
+            </div>
+        </div>
+
+
+        <br>
+        <br>
+        <br>
+
+        <br>
+        <br>
+
+        <div style="margin-left: 31%;" class="container">
+
+          <h3>Venta Total</h3>
+          <label for="id-venta"> ID Venta:  </label>
+          <label id="id-venta"></label>
+
+          <br>
+          <br>
+
+          <br>
+          <div class="row">
+
+            <div class="col">
+              <b>Cantidad</b>
+
+              <ul id="Cantidad_Venta">
+              </ul>
+
+            </div>
+
+            <div style="margin-left: -50%;" class="col">
+              <b> &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp Articulos</b>
+
+              <ul id="Cantidad_Articulos">
+              </ul>
+
+            </div>
+
+            <div style="margin-left: -40%;" class="col">
+              <b>Precio Total ($)</b>
+
+              <ul id="Cantidad_Precio_Total">
+              </ul>
+
+            </div>
+
+          </div>
+
+          <br>
+          <br>
+
+          <div style="margin-left: 25%;" class="row">
+            <div class="col-5">
+              <b>Costo Total: </b>
+            </div>
+            <div style="margin-left: -23%;" class="col-7">
+              <label id ="Costo_Total" for="start"></label>
+            </div>
+          </div>
+
+          <br>
+          <br>
+
+          <div style="margin-left: 0%;">
+            <button type="button" id="guardar_venta" onclick="g_venta()" class="btn btn-success" disabled>Guardar Venta</button>
+          </div>
+
+          
+        </div>
+
+        <br>  
+        <br>  
+        <br>
+
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>
+
+        <script>
+
+          function mostrar_producto(clicked) //clicked es tipo string
+          { 
+            valor_id=parseInt(clicked)
+
+            if (contador[valor_id]==0)
+                {
+                    mi_lista_equipo.innerHTML=lista_productos[valor_id]
+
+                    mi_disponible.innerHTML="&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp "+lista_disponibles[valor_id]
+
+                    mi_valor.innerHTML= "&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp "+lista_precio_unitario[valor_id]+" $"
+
+                    mi_boton_pedido.removeAttribute("disabled",false)
+
+                    mi_texto.removeAttribute("disabled",false)
+
+                    for (i=0;i<lista_productos.length;i++)
+                    {
+                      contador[i]=0;
+                    }
+
+                    contador[valor_id]=1
+
+                }
+
+                 else
+                 {
+                    mi_lista_equipo.innerHTML="Seleccione un producto referente a la venta realizada"
+
+                    mi_disponible.innerHTML="&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp 0"
+
+                    mi_valor.innerHTML="&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp   0 $"
+
+                    mi_boton_pedido.setAttribute("disabled",true)
+
+                     mi_texto.setAttribute("disabled",true)
+
+                    contador[valor_id]=0
+
+                 }
+          }
+
+          function agregar_al_pedido()
+          {
+
+            if (mi_texto.value>0 && (lista_disponibles[valor_id]-mi_texto.value)>=0)
+            {
+              let lista_Cantidad_Total=`<li style="list-style-type: none;">${mi_texto.value}</li>`
+
+              let lista_Articulos_Total=`<li style="list-style-type: none;">${mi_lista_equipo.textContent}</li>`
+
+              let lista_Precio_Total=`<li style="list-style-type: none;">${mi_texto.value*lista_precio_unitario[valor_id]} $</li>`
+
+
+              let grid_cantidad_total=document.getElementById("Cantidad_Venta")
+              grid_cantidad_total.innerHTML+=lista_Cantidad_Total
+
+              let grid_equipo_total=document.getElementById("Cantidad_Articulos")
+              grid_equipo_total.innerHTML+=lista_Articulos_Total
+
+              let grid_precio_total=document.getElementById("Cantidad_Precio_Total")
+              grid_precio_total.innerHTML+=lista_Precio_Total
+
+              costo_total+=parseInt(mi_valor.textContent)*mi_texto.value
+
+              label_total=document.getElementById("Costo_Total")
+
+              label_total.innerHTML=costo_total+" $"
+
+              lista_disponibles[valor_id]-=mi_texto.value
+
+              mi_disponible.innerHTML="&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp "+lista_disponibles[valor_id]
+
+              mi_id_venta.innerHTML=id_venta
+
+              mi_boton_guardar_venta.removeAttribute("disabled",false)
+
+              guardar_cantidad_venta.push(mi_texto.value)
+              guardar_articulos_venta.push(mi_lista_equipo.textContent)
+              guardar_precio_venta.push(parseInt(mi_valor.textContent)*mi_texto.value)
+
+            }
+
+          }
+
+          function g_venta()
+          {
+            let id_v=document.getElementById("id_vendedor").textContent
+            let n_c=document.getElementById("nombre_cliente").value
+            let id_c=document.getElementById("id_cliente").value
+            let fecha=document.getElementById("start").value
+
+            console.log(id_v)
+            console.log(n_c)
+            console.log(id_c)
+            console.log(fecha)
+            console.log(guardar_cantidad_venta)
+            console.log(guardar_articulos_venta)
+            console.log(guardar_precio_venta)
+            console.log(id_venta)
+            console.log(costo_total)
+
+            document.getElementById("id_vendedor").innerHTML=""
+            document.getElementById("nombre_cliente").value=""
+            document.getElementById("id_cliente").value=""
+
+            guardar_cantidad_venta=[]
+            guardar_articulos_venta=[]
+            guardar_precio_venta=[]
+
+            lista_Cantidad_Total=`<li style="list-style-type: none;"></li>`
+
+            lista_Articulos_Total=`<li style="list-style-type: none;"></li>`
+
+            lista_Precio_Total=`<li style="list-style-type: none;"></li>`
+
+
+              grid_cantidad_total=document.getElementById("Cantidad_Venta")
+              grid_cantidad_total.innerHTML=lista_Cantidad_Total
+
+              grid_equipo_total=document.getElementById("Cantidad_Articulos")
+              grid_equipo_total.innerHTML=lista_Articulos_Total
+
+              grid_precio_total=document.getElementById("Cantidad_Precio_Total")
+              grid_precio_total.innerHTML=lista_Precio_Total
+
+              label_total=document.getElementById("Costo_Total")
+
+              label_total.innerHTML=""
+
+              costo_total=0
+
+            id_venta+=1
+          
+
+          }
+
+          function m_vendedores(name)
+          {
+            let name_vendedor=parseInt(name)
+            document.getElementById("id_vendedor").innerHTML=lista_id_vendedores[name_vendedor]
+
+          }
+
+          let lista_productos=[]
+          lista_productos.push("Un computador una chimba")
+          lista_productos.push("Una impresora que imprime")
+          lista_productos.push("Un raton que se deja tocar")
+          lista_productos.push("Auriculares que no se dañan")
+          lista_productos.push("Un mando pa la pereza")
+
+          let lista_vendedores=["Vendedor a","vendedor 1","vendedor g","vendedor5"]
+
+          let lista_id_vendedores=[]
+
+          lista_id_vendedores.push(10237654)
+          lista_id_vendedores.push(12354365)
+          lista_id_vendedores.push(67894931)
+          lista_id_vendedores.push(21324377)
+
+          let costo_total=0
+
+          let valor_id=0
+
+          let id_venta=1000001
+
+          let lista_precio_unitario=[1000,200,100,300,150]
+
+          let lista_disponibles=[50,30,75,62,46]
+
+          let contador=[]
+
+          let guardar_cantidad_venta=[]
+          let guardar_articulos_venta=[]
+          let guardar_precio_venta=[]
+
+
+          let mi_lista_equipo=document.getElementById("idEquipo")
+          let mi_disponible=document.getElementById("disponible")
+          let mi_valor=document.getElementById("valor")
+          let mi_texto=document.getElementById("texto")
+          let mi_boton_pedido=document.getElementById("boton_pedido")
+          let mi_id_venta=document.getElementById("id-venta")
+          let mi_boton_guardar_venta=document.getElementById("guardar_venta")
+
+          for(i=0;i<lista_productos.length;i++)
+          {
+            let lista_p=`<li><button id="${i}" onClick="mostrar_producto(this.id)" class="dropdown-item" type="button">${lista_productos[i]}</button></li>`
+
+            let grid=document.getElementById("lista_productos")
+            grid.innerHTML+=lista_p
+
+            contador.push(0)
+
+          }
+
+          for(j=0;j<lista_id_vendedores.length;j++)
+          {
+            let lista_pp=`<li><button name="${j}" onClick="m_vendedores(this.name)" class="dropdown-item" type="button">${lista_vendedores[j]}</button></li>`
+
+            let grid_v=document.getElementById("drop_vendedores")
+            grid_v.innerHTML+=lista_pp
+
+          }
+
+        </script>
+    </body>
+</html>
