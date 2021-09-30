@@ -3,10 +3,36 @@
     <head>
         <meta charset="UTF-8">
         <title>Adminstrador de ventas</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
-    </head>
+        <link rel="stylesheet" href="home.css">
+      </head>
 
     <body style="background-color: rgb(226, 233, 240);">
+      <nav id="header" class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+          <a class="navbar-brand" href="#">
+              <img src="https://image.freepik.com/vector-gratis/tazon-frutas-sobre-fondo-negro-ilustracion-frutas_81894-3807.jpg" alt="Logo Tienda">
+              La Tienda del Grupo23
+          </a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#">Ventas</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Usuarios</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-login" href="#">Log in</a>
+              </li>
+             </ul>            
+          </div>
+        </div>
+      </nav>
         <center>
             <br>
             <br>
@@ -222,6 +248,25 @@
         <br>  
         <br>
 
+        <footer id="footer" class="pb-4 pt-4">
+          <div class="container">
+           <div class="row text-center">
+                 <div class="col-12 col-lg">
+                     <a href="#">Terminos y condiciones</a>
+                   </div>
+                   <div class="col-12 col-lg">
+                     <a href="#">Privacidad</a>
+                   </div>
+                   <div class="col-12 col-lg">
+                     <a href="#">Contactenos</a>
+                   </div>
+                   
+               
+             </div>
+           </div>
+       
+        </footer>
+
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>
 
         <script>
@@ -371,11 +416,12 @@
           }
 
           let lista_productos=[]
-          lista_productos.push("Un computador una chimba")
-          lista_productos.push("Una impresora que imprime")
-          lista_productos.push("Un raton que se deja tocar")
-          lista_productos.push("Auriculares que no se dañan")
-          lista_productos.push("Un mando pa la pereza")
+          lista_productos.push("Una Papaya una chimba")
+          lista_productos.push("Una Pitalla pa aflojar")
+          lista_productos.push("Un Limon super acido")
+          lista_productos.push("Un Mango que no necesita azucar")
+          lista_productos.push("Piña para la niña")
+          lista_productos.push("Un Zapote pa los jugos")
 
           let lista_vendedores=["Vendedor a","vendedor 1","vendedor g","vendedor5"]
 
@@ -392,9 +438,9 @@
 
           let id_venta=1000001
 
-          let lista_precio_unitario=[1000,200,100,300,150]
+          let lista_precio_unitario=[5,10,2,4,7,12]
 
-          let lista_disponibles=[50,30,75,62,46]
+          let lista_disponibles=[500,500,3000,200,100,40]
 
           let contador=[]
 
