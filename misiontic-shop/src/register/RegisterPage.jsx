@@ -1,12 +1,11 @@
 import React, { Fragment } from "react";
-import NavbarComponent from "../shared/components/navbar/NavbarComponent";
-
+import FootComponent from "../shared/components/footer/FootComponent";
 
 function RegisterPage() {
   return (
     <Fragment>
-      <NavbarComponent/>
-      <h1>Register Page</h1>
+      
+        <h1>Register Page</h1>
     </Fragment>
   );
 }

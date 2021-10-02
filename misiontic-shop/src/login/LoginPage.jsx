@@ -1,13 +1,18 @@
 import React, { Fragment } from "react";
-import NavbarComponent from "../shared/components/navbar/NavbarComponent"
+import "./loginStyles.css";
+import FootComponent from "../shared/components/footer/FootComponent";
 
 function LoginPage() {
     return (
         <Fragment>
-           <NavbarComponent/> 
-            <h1>Login Page</h1>
+           
+            <h1 className=  "login-title">Login Page 11</h1>
         </Fragment>
+
+        
     );
 }
 
+
 export default LoginPage;
+
