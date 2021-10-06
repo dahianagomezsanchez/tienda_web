@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <script src="js/registro.js"></script>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Registro</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous" />
+    <link rel="stylesheet" href="css/registro.css" />
+</head>
+
+<body class="bg-image" style="
+      background-image: url(imagenes/fondoInicioSesion.jpg);
+      background-size: 1000px 900px;
+    ">
+    <div>
+        <h1 class="text-center text-primary mt-5 text-light">
+            Registro de Productos
+        </h1>
+        <form action="" enctype="multipart/form-data">
+            <div class="row row-col-12 col-6 form -group p-5">
+                <div class="col-12 col- 6 sm">
+                    <label class="d-block my-2 text-light" for="">Identificador Único</label>
+                    <input required class="form-control" type="text" placeholder="Id" />
+                </div>
+
+                <div class="col-12">
+                    <label class="d-block my-2 text-light" for="">Descripción del producto</label>
+                    <input required class="form-control" type="text" placeholder="Descripción del producto" />
+                </div>
+
+                <div class="col-12">
+                    <label class="d-block my-2 text-light" for="">Valor Unitario</label>
+                    <input required class="form-control" type="number" placeholder="Valor Unitario" />
+                </div>
+
+                <div class="col-12">
+                    <label class="d-block my-2 text-light" for="">Estado del producto</label>
+                    <select required name="Estado producto" id="" class="form-control">
+                        <option value="" selected>Seleccione</option>
+                        <option value="1">Disponible</option>
+                        <option value="2">No disponible</option>
+                    </select>
+                </div>
+
+                <div class="d-flex justify-content-center">
+                    <input type="submit" class="btn btn-light mt-5 col-3" onclick="return validacion(this.form)" value="Registrar"/>
+                </div>
+            </div>
+        </form>
+    </div>
+</body>
+
+</html>

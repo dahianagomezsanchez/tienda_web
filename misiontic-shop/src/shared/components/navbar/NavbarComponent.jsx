@@ -1,27 +1,26 @@
 import React from "react";
-import {Link}  from "react-router-dom";
-     
+import { Link } from "react-router-dom";
 
+/* import logo from "\src\assets\img\tazonFrutas.jpg";
+ */
 function NavbarComponent(props) {
   let title = props.title;
   let title1 = props.title1;
 
   return (
+  
+   
+    
     <nav id="header" className="navbar navbar-light navbar-expand-lg navbar-dark bg-dark">
+          
       <div className="container-fluid">
+        
         <a className="navbar-brand" href="#">
           <h5 >{title}-{ title1}</h5>
-          
-          <img
-            src="\src\assets\img\tazonFrutas.jpg"
-            alt=""
-            width="40"
-            height="40"
-            class="d-inline-block align-text-right-top"
-          
-          /> 
          
-          
+         {/*  <img
+            src={logo} className= "navbar navbar-light navbar-expand-lg navbar-dark bg-dark" alt = "logo"  /> */}
+                  
         </a>
         <button
           className="navbar-toggler"
