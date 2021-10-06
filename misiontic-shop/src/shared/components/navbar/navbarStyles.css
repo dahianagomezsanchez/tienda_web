@@ -1,7 +1,10 @@
                      
- .NavbarcComponent-img-header{
+.NavbarComponents-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
 
                     
                         
- }
+ 
        

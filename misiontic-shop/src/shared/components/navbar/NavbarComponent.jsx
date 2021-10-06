@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
+
 /* import logo from "\src\assets\img\tazonFrutas.jpg";
  */
 function NavbarComponent(props) {
@@ -34,9 +35,12 @@ function NavbarComponent(props) {
           <span className="navbar-toggler-icon"></span>
         </button>
         <div className="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul className="navbar-nav ms-auto mb-2 mb-lg-0">
+          <ul className="navbar ms-auto mb-2 mb-lg-2">
+            
             <li className="nav-item">
-              <Link to = "/home" className="nav-link text-login">Home</Link>
+              <Link to="/home" className="nav-link text-login">Home</Link>
+            </li>
+            <li className="nav-item">
               <Link to = "/login" className="nav-link text-login" >Login</Link>
             </li>
             <li className="nav-item">
@@ -44,10 +48,11 @@ function NavbarComponent(props) {
             </li>
             <li className="nav-item">
               <Link to="/sales" className="nav-link active" aria-current="page">Sales</Link>
-              {/* Se debe agragar el boton registro */}
-
-
+              </li>
+            <li className="nav-item">
+              <Link to="/register" className="nav-link active" aria-current="page">Register</Link>
             </li>
+        
           </ul>
         </div>
       </div>
