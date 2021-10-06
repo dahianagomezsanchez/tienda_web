@@ -1,0 +1,79 @@
+.color-ventana
+{
+    background-color: rgb(226, 233, 240)
+}
+
+.style-dropdownMenuButton1
+{
+    width: 100%
+}
+
+.style-label-id_vendedor
+{
+    width: min-content
+}
+
+.style-input-nombre_cliente
+{
+    width: 90%;margin-left: 5%
+}
+
+.style-input-id_cliente
+{
+    width: 100%
+}
+
+.style-input-start
+{
+    width: 80%
+}
+
+.style-dropdown
+{
+    margin-left: 2%;
+}
+
+.style-list
+{
+    list-style-type: none
+}
+
+.style-texto
+{
+    font-size: 80%
+}
+
+.style-div-boton-pedido
+{
+    margin-left: 34%
+}
+
+.style-div-ventaTotal
+{
+    margin-left: 31%
+}
+
+.style-div-articulos
+{
+    margin-left: -50%
+}
+
+.style-div-precioTotal
+{
+    margin-left: -40%
+}
+
+.style-div-costoTotal
+{
+    margin-left: 25%
+}
+
+.style-label-costoTotal
+{
+    margin-left: -23%
+}
+
+.style-div-button-guardarVenta
+{
+    margin-left: 0%
+}
