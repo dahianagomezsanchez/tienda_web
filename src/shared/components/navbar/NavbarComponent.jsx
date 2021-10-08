@@ -1,27 +1,32 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import logo from "./tazonFrutas.jpg";
 
 
-/* import logo from "\src\assets\img\tazonFrutas.jpg";
- */
 function NavbarComponent(props) {
   let title = props.title;
   let title1 = props.title1;
 
   return (
   
-   
+    
     
     <nav id="header" className="navbar navbar-light navbar-expand-lg navbar-dark bg-dark">
           
       <div className="container-fluid">
         
         <a className="navbar-brand" href="#">
+          <img
+            src={logo}
+            alt=""
+            width="40"
+            height="40"
+            class="d-inline-block align-text-right-top"
+
+          />
           <h5 >{title}-{ title1}</h5>
          
-         {/*  <img
-            src={logo} className= "navbar navbar-light navbar-expand-lg navbar-dark bg-dark" alt = "logo"  /> */}
-                  
+                           
         </a>
         <button
           className="navbar-toggler"
@@ -35,7 +40,7 @@ function NavbarComponent(props) {
           <span className="navbar-toggler-icon"></span>
         </button>
         <div className="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul className="navbar ms-auto mb-2 mb-lg-2">
+          <ul className="navbar ms-auto mb-2 mb-lg-3">
             
             <li className="nav-item">
               <Link to="/home" className="nav-link text-login">Home</Link>
