@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-
+import logo from "./tazonFrutas.jpg";
 
 
 function NavbarComponent(props) {
@@ -16,7 +16,14 @@ function NavbarComponent(props) {
       <div className="container-fluid">
         
         <a className="navbar-brand" href="#">
-        
+          <img
+            src={logo}
+            alt=""
+            width="40"
+            height="40"
+            class="d-inline-block align-text-right-top"
+
+          />
           <h5 >{title}-{ title1}</h5>
          
                            

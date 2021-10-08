@@ -1,13 +1,13 @@
 import React, { Fragment } from "react";
 /* import fondoInicioSesion from "*.module.sass" */
-import tazonFrutas from "../assets/img/tazonFrutas.jpg";
+
 
 function RegisterPage() {
   return (
     <Fragment>
       <center>
         <div>
-          <img src={tazonFrutas} alt="this is a fruit" />
+         
         </div>
         <div> <center>
           <br />
