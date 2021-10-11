@@ -1,49 +1,101 @@
 const { response, request } = require("express");
 const express = require("express");
 const app = express();
-const mysql = require("mysql2");
-const port = 3001
-const bluebird = require('bluebird');
+const mysql = require("mysql2/promise");
+const port = 3001;
+const bluebird = require("bluebird");
 
 let connection; //Variable para almacenar la conexión a la DB
 
 //Configura el servidor para recibir dtos en formato Json
 app.use(express.json());
 
-app.get("/get-product", (request, response)=>{
+app.get("/get-products", async(request, response) => {
+    const [rows, fields] = await connection.execute("SELECT * FROM products");
+
+    console.log(rows);
+    console.log(fields.length);
     response.send("Todo ok");
 })
-    
-app.post("/add-product",async(request, response) => {
-    await connection.execute("INSERT INTO products(name, price, stock, description, status) VALUES ('Piña', 1200, 150, 'variedad Oromiel con cogollo', 'Disponible')");
+
+/* app.get("/get-product/:id"), async (request, response) => {
+    await connection.execute("SELECT*FROM products WHERE id= ?", [request.params.id]);
+    console.log()
+    response.send("el ID de empleado");
+
+} */
+
+app.post("/add-product", async(request, response) => {
     const product = request.body;
-    console.log(product.name)
-    response.json(product)
+    const name = product.name;
+    const price = product.price;
+    const stock = product.stock;
+    const description = product.description;
+    const status = product.status;
+
+
+    await connection.execute(`INSERT INTO products(name, price, stock, description, status) VALUES ('${name}', ${price}, ${stock},'${description}', '${status}')`);
+
+    console.log(product);
+    response.json(product);
+
+    /*   /* /* Se convierten en variable   de una función utilizando la destructuración*/
 })
-app.put("/update-product", (request, response) => {
+
+app.put("/update-product/:id", async(request, response) => {
+
+
+    let {
+        id
+    } = request.params;
+
     const product = request.body;
-    console.log(product.name)
-    response.json(product)
+
+    const name = product.name;
+    const price = product.price;
+    const stock = product.stock;
+    const description = product.description;
+    const status = product.status;
+
+    await connection.execute(`UPDATE products SET name='${name}', price='${price}', stock='${stock}', description='${description}', status='${status}' WHERE id='${id}'`);
+
+    console.log(product.name);
+    response.json(product);
 })
-app.delete("/delete-product", (request, response) => {
+
+
+
+
+
+app.delete("/delete-product/:id", async(request, response) => {
+    /*  let {
+         id
+     } = request.params; */
+
     const product = request.body;
-    console.log(product.name)
-    response.json(product)
+    const id = product.id;
+    /*   const name = product.name;
+      const price = product.price;
+      const stock = product.stock;
+      const description = product.description;
+      const status = product.status; */
+
+    await connection.execute(`DELETE FROM  products WHERE id= '${id}'`);
+    response.send("Producto eliminado");
+    console.log(product.name);
+    response.json(product);
+
 })
 
-
-
-
-
-app.listen(port, async () => {
-     connection = await mysql.createConnection({
-       host: "localhost",
-       user: "root",
-       port: 3306,
-       password: "root",
+app.listen(port, async() => {
+    connection = await mysql.createConnection({
+        host: "localhost",
+        user: "root",
+        port: 3306,
+        password: "root",
         database: "tienda-grupo-23",
-       Promise: bluebird
-     });
+        Promise: bluebird
+    });
     console.log("Server running on port: " + port);
 
 });
