@@ -1,9 +1,13 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import logo from "./tazonFrutas.jpg";
+import { useAuth0 } from "@auth0/auth0-react";
 
 
 function NavbarComponent(props) {
+  const { loginWithRedirect } = useAuth0();
+  const { logout } = useAuth0();
+
   let title = props.title;
   let title1 = props.title1;
 
@@ -45,9 +49,25 @@ function NavbarComponent(props) {
             <li className="nav-item">
               <Link to="/home" className="nav-link text-login">Home</Link>
             </li>
-            <li className="nav-item">
-              <Link to = "/login" className="nav-link text-login" >Login</Link>
-            </li>
+           
+              {/* <Link to = "/login" className="nav-link text-login" >Login</Link> */}
+            <a       
+                type="button"
+                className="nav-link text-login"
+                data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent"
+                aria-expanded="false"
+                aria-label="Toggle navigation" onClick={() => loginWithRedirect()}>Log In</a>;
+            <a  type="button"
+              className="nav-link text-login"
+              data-bs-toggle="collapse"
+              data-bs-target="#navbarSupportedContent"
+              aria-controls="navbarSupportedContent"
+              aria-expanded="false"
+                aria-label="Toggle navigation" onClick={() => logout({ returnTo: window.location.origin })}>
+              Log Out
+            </a>;
             <li className="nav-item">
               <Link to = "/users" className="nav-link">Users</Link>
             </li>
