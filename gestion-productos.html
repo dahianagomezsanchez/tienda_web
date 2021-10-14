@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modulo Productos</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous"> 
+    <link rel="stylesheet" type="text/css" href="./assets/css/styles.css">
+    <link rel="stylesheet" type="text/css" href="./assets/css/gestion-productos.css">
+</head>
+
+<body>
+    <div>
+        <header>
+          <img src="https://image.freepik.com/vector-gratis/tazon-frutas-sobre-fondo-negro-ilustracion-frutas_81894-3807.jpg" alt="Logo Tienda">
+          La Tienda del Grupo23
+            
+        </header>
+
+        <main>
+            <div id="agregar">
+                <h1>Gestion de productos</h1>
+
+                <nav class="navbar">
+                  <div class="container-fluid">
+                    <form class="d-flex">
+                      <input class="form-control me-2" type="search" placeholder="Buscar" aria-label="Search">
+                      <button class="btn btn-outline-success" type="submit">Buscar</button>
+                    </form>
+                  </div>
+                </nav>  
+            </div>
+
+            
+
+          <div class="container" id="table">
+            <div class="row">
+              <div class="col-12">
+                <div class="table-responsive">
+                  <table id="tablaproductos" class="table table-striped table-bordered table-condensed" style="width: 100%;">
+                    <thead class="text-center">
+                        <tr>
+                            <th>Id</th>
+                            <th>Descripción</th>
+                            <th>Valor Unitario</th>
+                            <th>Estado</th>
+                            <th>Acciones</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        <tr>
+                            <td>01</td>
+                            <td>producto no perecedero</td>
+                            <td>1000</td>
+                            <td>disponible</td>
+                            <td>
+                                  <div class="text-center">
+                                    <div class="btn-group">
+                                        <button type="button" class="btn btn-primary" data-toggle='modal' data-target='#modal1' data-bs-whatever="@mdo"><strong>Editar</strong></button>
+
+                                        <button type="button" class="btn btn-danger"><strong>Eliminar</strong></button>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>    
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>  
+
+          
+<div class="modal fade" id="modal1" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2 class="modal-title" id="modal1">Actulizar Producto</h2>
+        
+      </div>
+      <div class="modal-body">
+        <form>
+                        
+          <div class="mb-3">
+            <label for="Id" class="col-form-label">Id</label>
+            <input required type="text" class="form-control" id="Id" placeholder="Id">
+          </div>
+
+          <div class="mb-3">
+            <label for="Descripcion" class="col-form-label">Descripcion</label>
+            <textarea required class="form-control" id="descripcion"></textarea>
+          </div>
+
+          <div class="mb-3">
+            <label for="Valor_Unitario" class="col-form-label">Valor Unitario</label>
+            <input required type="text" class="form-control" id="Valor Unitario" placeholder="Valor Unitario">
+          </div>
+
+          <div class="mb-3">
+            <label class="col-form-label" for="">Estado</label>
+            <select required name="Estado" id="Estado" class="form-control">
+                    <option value="">Seleccione</option>
+                    <option value="1">Disponible</option>
+                    <option value="2">No disponible</option>
+            </select>        
+          </div>
+                                  
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="submit" class="btn btn-primary">Actualizar</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+          
+          
+
+            
+          
+           
+
+                       
+        </main>
+
+        <footer>
+
+        </footer>
+    </div>
+
+    <script src="./assets/jquery/jQuery-1.12.4/jquery-1.12.4.min.js"></script>
+    <script src="./assets/bootstrap-4.3.1-dist/js/bootstrap.min.js"></script>
+    <script src="./assets/js/seller_module.js"></script>
+
+    
+    <script type="text/javascrip" src="./assets/js/seller_module.js"></script>
+    
+</body>
+
+</html>
