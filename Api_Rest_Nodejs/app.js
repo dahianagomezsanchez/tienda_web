@@ -1,5 +1,6 @@
 const { response, request } = require("express");
 const express = require("express");
+const cors = require("cors");
 const app = express();
 const mysql = require("mysql2/promise");
 const port = 3001;
@@ -9,13 +10,17 @@ let connection; //Variable para almacenar la conexión a la DB
 
 //Configura el servidor para recibir dtos en formato Json
 app.use(express.json());
+app.use(cors({ origin: true }));
 
 app.get("/get-products", async(request, response) => {
     const [rows, fields] = await connection.execute("SELECT * FROM products");
 
-    console.log(rows);
+    console.log({
+        data: rows
+    });
     console.log(fields.length);
-    response.send("Todo ok");
+
+    response.json({ data: rows });
 })
 
 /* app.get("/get-product/:id"), async (request, response) => {
@@ -91,7 +96,7 @@ app.listen(port, async() => {
     connection = await mysql.createConnection({
         host: "localhost",
         user: "root",
-        port: 3306,
+        /*  port: 3306, */
         password: "root",
         database: "tienda-grupo-23",
         Promise: bluebird
