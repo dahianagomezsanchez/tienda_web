@@ -7,6 +7,8 @@ import { useAuth0 } from "@auth0/auth0-react";
 function NavbarComponent(props) {
   const { loginWithRedirect } = useAuth0();
   const { logout } = useAuth0();
+  const { user, isAuthenticated } = useAuth0();
+
 
   let title = props.title;
   let title1 = props.title1;
@@ -77,6 +79,9 @@ function NavbarComponent(props) {
             <li className="nav-item">
               <Link to="/register" className="nav-link active" aria-current="page">Register</Link>
             </li>
+            <a>               
+              <button class="btn btn-outline-success" type="submit">{ isAuthenticated ? user.name : "User"}</button>
+             </a>
         
           </ul>
         </div>
