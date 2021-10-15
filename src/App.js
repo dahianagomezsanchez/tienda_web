@@ -17,7 +17,7 @@ function App() {
 
       <Switch>
          <Route path="/home" exact>
-          {granAcces() ?<HomePages />: <ForbidenComponent />}
+          <HomePages />
         </Route>
         <Route path="/login" exact>
           <LoginPage />
