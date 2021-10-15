@@ -60,16 +60,17 @@ function NavbarComponent(props) {
                 data-bs-target="#navbarSupportedContent"
                 aria-controls="navbarSupportedContent"
                 aria-expanded="false"
-                aria-label="Toggle navigation" onClick={() => loginWithRedirect()}>Log In</a>;
-            <a  type="button"
+              aria-label="Toggle navigation" onClick={() => loginWithRedirect()}>Log In</a>;
+          
+            {isAuthenticated ? <a  type="button"
               className="nav-link text-login"
               data-bs-toggle="collapse"
               data-bs-target="#navbarSupportedContent"
               aria-controls="navbarSupportedContent"
               aria-expanded="false"
                 aria-label="Toggle navigation" onClick={() => logout({ returnTo: window.location.origin })}>
-              Log Out
-            </a>;
+              Log Out  </a> : null};
+            
             <li className="nav-item">
               <Link to = "/users" className="nav-link">Users</Link>
             </li>
@@ -79,9 +80,9 @@ function NavbarComponent(props) {
             <li className="nav-item">
               <Link to="/register" className="nav-link active" aria-current="page">Register</Link>
             </li>
-            <a>               
-              <button class="btn btn-outline-success" type="submit">{ isAuthenticated ? user.name : "User"}</button>
-             </a>
+             <a>
+              <button class="btn btn-outline-success" type="submit">{isAuthenticated ? user.name : "User"}</button>
+            </a>
         
           </ul>
         </div>
