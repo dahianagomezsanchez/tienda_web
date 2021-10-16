@@ -6,9 +6,10 @@ import ForbidenComponent from "../shared/components/forbiden/ForbidenComponent";
 
 
 function HomePages() {
-    const { user, isAuthenticated } = useAuth0();
+    const {user, isAuthenticated} = useAuth0();
     const [products, setProducts] = useState([]);
-    const numbers = [1, 2, 3, 4, 5];
+    const [validUser, setValidUser] = useState(false);
+    /* const numbers = [1, 2, 3, 4, 5];
     const listItems = numbers.map((product) =>
         <tr>
             <th scope="row">product.id</th>
@@ -19,7 +20,7 @@ function HomePages() {
             <td>product.status</td>
         </tr>
 
-    );
+    ); */
 
     const getProducts = async () => {
         try {
@@ -48,41 +49,54 @@ function HomePages() {
 
     
     const validateUserRole = async () => {
-        const response = await fetch(`http://localhost:3001/get-user?email='${user.email}'`);
+        //const response = await fetch(`http://localhost:3001/get-user?email=${user.email}`);
+
+        const response = await fetch(`http://localhost:3001/get-user?email=cospina@hotmail.com`);
         const jsonResponse = await response.json();
+        console.log(jsonResponse);
         return jsonResponse;
     }
     const granAcces = async () => {
         let userData;
+
         if (isAuthenticated) {            
             userData = await validateUserRole();
+            console.log(userData);
         }
         else {
-            return false;
+           /*  window.location.href ="https://dev-j-0qzk0v.us.auth0.com/u/login?state=hKFo2SBVd2Nob1dxWkZrakU5d1FZQlhwaU1UTmVUMUpFY0VkaaFur3VuaXZlcnNhbC1sb2dpbqN0aWTZIEhLZUkzc0g4N0RubWpBZklaWENqa2xDMXVUUlBtQm5ko2NpZNkgY0N1a0ZzNWVtSUhrWVZsOGFZRk5DMm5WYUVMRnUwVzY" */
+            setValidUser(false);
+            return;
         }
 
         if (userData) {
-            if (userData.role != "Invitado") {
-                return true;
+            if (userData.role !== "Invitado") {
+                setValidUser(true);
+                localStorage.setItem("state", userData.role);
+                console.log(userData.role);
+                await getProducts();
                 }
             else {
-                return false;
+                localStorage.setItem("state", userData.role);
+                setValidUser(false);
+                
                 }
             }
             else {
-                return false
+                setValidUser(false);
             }
     }
 
 
     useEffect(() => {
-        getProducts();
-    }, []);
-    if (granAcces()) {
+        granAcces();
+        //getProducts(); 
+    }, [isAuthenticated, validUser]);
+    
         return (
 
             <div className="container">
-                <table class="table">
+                {validUser ? <table class="table">
                     <thead>
                         <tr>
                             <th scope="col">ID</th>
@@ -94,18 +108,15 @@ function HomePages() {
                         </tr>
                     </thead>
                     <tbody>
-                        {products}
+                       {products}
                     </tbody>
-                </table>
+                </table>: <ForbidenComponent/>}
             </div>
 
 
 
-        );
-    }
-    else {
-        return <ForbidenComponent/>
-    }
+        )
+    
 }
 
 

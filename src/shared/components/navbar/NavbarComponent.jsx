@@ -27,8 +27,8 @@ function NavbarComponent(props) {
             alt=""
             width="40"
             height="40"
-            class="d-inline-block align-text-right-top"
-
+            className="d-inline-block align-text-right-top"
+            
           />
           <h5 >{title}-{title1}</h5>
 
@@ -68,7 +68,7 @@ function NavbarComponent(props) {
               data-bs-target="#navbarSupportedContent"
               aria-controls="navbarSupportedContent"
               aria-expanded="false"
-              aria-label="Toggle navigation" onClick={() => logout({ returnTo: window.location.origin })}>
+              aria-label="Toggle navigation" onClick={() => logout({ returnTo: window.location.name })}>
               Log Out  </a> : null};
 
             <li className="nav-item">
@@ -81,7 +81,7 @@ function NavbarComponent(props) {
               <Link to="/register" className="nav-link active" aria-current="page">Register</Link>
             </li>
             <a>
-              <button class="btn btn-outline-success" type="submit">{isAuthenticated ? user.name : "User"}</button>
+              <button className="btn btn-outline-success" type="submit">{isAuthenticated ? user.name : "User"}</button>
             </a>
 
           </ul>
