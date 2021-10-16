@@ -70,19 +70,21 @@ function HomePages() {
         }
 
         if (userData) {
-            if (userData.role !== "Invitado") {
+            if (userData.role !== "Vendedor") {
                 setValidUser(true);
                 localStorage.setItem("state", userData.role);
                 console.log(userData.role);
                 await getProducts();
-                }
+            }
+                
             else {
                 localStorage.setItem("state", userData.role);
                 setValidUser(false);
                 
                 }
             }
-            else {
+        else {
+            localStorage.setItem("state", userData.role);
                 setValidUser(false);
             }
     }
