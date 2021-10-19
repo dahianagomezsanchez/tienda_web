@@ -1,7 +1,7 @@
-const { response, request } = require("express");
+const {response, request}  = require("express");
 const express = require("express");
 const cors = require("cors");
-const app = express();
+const app = express(); 
 const mysql = require("mysql2/promise");
 const port = 3001;
 const bluebird = require("bluebird");
@@ -23,20 +23,30 @@ app.get("/get-products", async(request, response) => {
     response.json({ data: rows });
 })
 
-/* app.get("/get-product/:id"), async (request, response) => {
-    await connection.execute("SELECT*FROM products WHERE id= ?", [request.params.id]);
+app.get("/get-user", async (request, response) => {
+    const email = request.query.email;    
+    const [rows, fields] = await connection.execute(`SELECT * FROM users WHERE email='${email}'`);
+    response.json(rows[0]);
+})
+
+app.get("/get-product/:id"), async (request, response) => {
+    const id = request.query.id;
+    const [rows, fields]= await connection.execute(`SELECT*FROM products WHERE id='${id}'`);
     console.log()
-    response.send("el ID de empleado");
+    response.json(rows[0]);
 
-} */
+} 
 
-app.post("/add-product", async(request, response) => {
-    const product = request.body;
+app.post("/add-product", async (request, response) => {
+    
+    const { name, price, stock, description, status } = request.body;
+    
+    /* const product = request.body;
     const name = product.name;
     const price = product.price;
     const stock = product.stock;
     const description = product.description;
-    const status = product.status;
+    const status = product.status; */
 
 
     await connection.execute(`INSERT INTO products(name, price, stock, description, status) VALUES ('${name}', ${price}, ${stock},'${description}', '${status}')`);
@@ -48,19 +58,20 @@ app.post("/add-product", async(request, response) => {
 })
 
 app.put("/update-product/:id", async(request, response) => {
-
-
-    let {
+    /* let {
         id
-    } = request.params;
+    } = request.params; */
 
-    const product = request.body;
+
+    const id = request.body.id;
+    const { name, price, stock, description, status } = request.body;
+   /*  const product = request.body;
 
     const name = product.name;
     const price = product.price;
     const stock = product.stock;
     const description = product.description;
-    const status = product.status;
+    const status = product.status; */
 
     await connection.execute(`UPDATE products SET name='${name}', price='${price}', stock='${stock}', description='${description}', status='${status}' WHERE id='${id}'`);
 
@@ -76,9 +87,9 @@ app.delete("/delete-product/:id", async(request, response) => {
     /*  let {
          id
      } = request.params; */
-
+    const id = request.body.id;
     const product = request.body;
-    const id = product.id;
+    /* const id = product.id; */
     /*   const name = product.name;
       const price = product.price;
       const stock = product.stock;
@@ -96,7 +107,7 @@ app.listen(port, async() => {
     connection = await mysql.createConnection({
         host: "localhost",
         user: "root",
-        /*  port: 3306, */
+       port: 3306,
         password: "root",
         database: "tienda-grupo-23",
         Promise: bluebird

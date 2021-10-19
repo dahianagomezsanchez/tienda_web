@@ -9,16 +9,17 @@ import{BrowserRouter as Router, Switch, Route} from "react-router-dom"
 import NavbarComponent from "./shared/components/navbar/NavbarComponent";
 import ForbidenComponent from "./shared/components/forbiden/ForbidenComponent";
 
+
+
 function App() {
-  const {isAuthenticated } = useAuth0();
-  
+ 
   return (
     <Router>
       <NavbarComponent title="Misión TIC" title1="La Tienda del Grupo 23" />
 
       <Switch>
          <Route path="/home" exact>
-          {isAuthenticated ?<HomePages />: <ForbidenComponent />}
+          <HomePages />
         </Route>
         <Route path="/login" exact>
           <LoginPage />
