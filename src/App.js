@@ -9,6 +9,8 @@ import{BrowserRouter as Router, Switch, Route} from "react-router-dom"
 import NavbarComponent from "./shared/components/navbar/NavbarComponent";
 import ForbidenComponent from "./shared/components/forbiden/ForbidenComponent";
 
+
+
 function App() {
  
   return (

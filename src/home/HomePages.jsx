@@ -9,6 +9,7 @@ function HomePages() {
     const {user, isAuthenticated} = useAuth0();
     const [products, setProducts] = useState([]);
     const [validUser, setValidUser] = useState(false);
+    const { loginWithRedirect } = useAuth0();
     /* const numbers = [1, 2, 3, 4, 5];
     const listItems = numbers.map((product) =>
         <tr>
@@ -51,7 +52,7 @@ function HomePages() {
     const validateUserRole = async () => {
         //const response = await fetch(`http://localhost:3001/get-user?email=${user.email}`);
 
-        const response = await fetch(`http://localhost:3001/get-user?email=cospina@hotmail.com`);
+        const response = await fetch(`http://localhost:3001/get-user?email=${user.email}`);
         const jsonResponse = await response.json();
         console.log(jsonResponse);
         return jsonResponse;
@@ -65,6 +66,10 @@ function HomePages() {
         }
         else {
            /*  window.location.href ="https://dev-j-0qzk0v.us.auth0.com/u/login?state=hKFo2SBVd2Nob1dxWkZrakU5d1FZQlhwaU1UTmVUMUpFY0VkaaFur3VuaXZlcnNhbC1sb2dpbqN0aWTZIEhLZUkzc0g4N0RubWpBZklaWENqa2xDMXVUUlBtQm5ko2NpZNkgY0N1a0ZzNWVtSUhrWVZsOGFZRk5DMm5WYUVMRnUwVzY" */
+            if (!verifySesion()) {
+                loginWithRedirect();
+            }
+            
             setValidUser(false);
             return;
         }
@@ -89,6 +94,16 @@ function HomePages() {
             }
     }
 
+
+    const verifySesion = () => {
+        
+        const cookies = document.cookie;
+        let state = false;
+        if (cookies.includes("auth0")) {
+            state = true;
+        }
+        return state;
+    }
 
     useEffect(() => {
         granAcces();
