@@ -3,6 +3,7 @@ import "./homeStyles.css";
 import FootComponent from "../shared/components/footer/FootComponent";
 import { useAuth0 } from "@auth0/auth0-react";
 import ForbidenComponent from "../shared/components/forbiden/ForbidenComponent";
+import apiBaseUrl from "../shared/components/utils/Api";
 
 
 function HomePages() {
@@ -13,7 +14,7 @@ function HomePages() {
     /* const numbers = [1, 2, 3, 4, 5];
     const listItems = numbers.map((product) =>
         <tr>
-            <th scope="row">product.id</th>
+            <th scope="row">product.id</th>apiBaseUrl
             <td>product.name</td>
             <td>product.price</td>
             <td>product.stock</td>
@@ -25,7 +26,7 @@ function HomePages() {
 
     const getProducts = async () => {
         try {
-            const response = await fetch("http://localhost:3001/get-products");
+            const response = await fetch(`${apiBaseUrl}/get-products`);
             const jsonResponse = await response.json();
             const responseProducts = jsonResponse.data;
             const listProducts = responseProducts.map((product) =>
@@ -52,7 +53,7 @@ function HomePages() {
     const validateUserRole = async () => {
         //const response = await fetch(`http://localhost:3001/get-user?email=${user.email}`);
 
-        const response = await fetch(`http://localhost:3001/get-user?email=${user.email}`);
+        const response = await fetch(`${apiBaseUrl}/get-user?email=${user.email}`);
         const jsonResponse = await response.json();
         console.log(jsonResponse);
         return jsonResponse;
